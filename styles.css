@@ -11,26 +11,25 @@ body {
 
 /* Calculator container */
 .calculator {
-  width: 320px; /* Adjust width to ensure proper centering */
+  width: 340px;
   background: #c1c1c1; /* Light gray background */
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
   display: flex;
-  flex-direction: column; /* Align items in a column */
-  align-items: center; /* Center content horizontally */
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Display screen */
 .calculator .display {
-  width: 100%; /* Ensure full width within the calculator */
-  max-width: 280px; /* Limit the maximum width */
+  width: 100%;
   height: 60px;
-  margin-bottom: 15px; /* Space between display and buttons */
+  margin-bottom: 15px;
   font-size: 1.8em;
-  text-align: right; /* Align text to the right */
+  text-align: right;
   padding: 10px;
-  border: 2px solid #ddd; /* Border for visual clarity */
+  border: 2px solid #ddd;
   border-radius: 5px;
   background-color: #fff;
   box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.2); /* Inner shadow */
@@ -39,13 +38,14 @@ body {
 /* Buttons container */
 .calculator .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
   gap: 10px; /* Space between buttons */
+  width: 100%; /* Make buttons stretch across full width */
 }
 
 /* Button styles */
 .calculator .button {
-  height: 65px; /* Increased height */
+  height: 65px;
   font-size: 1.3em;
   font-weight: bold;
   border: none;
@@ -62,16 +62,18 @@ body {
   background-color: #5a5a5a; /* Slightly lighter gray on hover */
 }
 
-/* Clear button */
-.calculator .button.clear {
-  background-color: #e63946; /* Red for the clear button */
-  color: white;
-}
-
 /* Equals button */
 .calculator .button.equal {
   background-color: #0077b6; /* Blue for the equal button */
   color: white;
+}
+
+/* Clear button */
+.calculator .button.clear {
+  background-color: #e63946; /* Red for the clear button */
+  color: white;
+  grid-column: span 4; /* Spans all 4 columns */
+  height: 75px; /* Slightly larger height for emphasis */
 }
 
 /* Button press effect */
