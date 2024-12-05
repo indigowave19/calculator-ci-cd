@@ -10,76 +10,40 @@
     <!-- Calculator Container -->
     <div class="calculator">
         <!-- Display Screen -->
-        <!-- Read-only input field where results and calculations are displayed -->
         <input type="text" id="display" class="display" readonly />
         
         <!-- Buttons -->
         <div class="buttons">
             <!-- First Row -->
-            <!-- Buttons for numbers 9, 8, 7 and the "+" operator -->
             <button class="button" onclick="appendToDisplay('9')">9</button>
             <button class="button" onclick="appendToDisplay('8')">8</button>
             <button class="button" onclick="appendToDisplay('7')">7</button>
             <button class="button" onclick="appendToDisplay('+')">+</button>
             
             <!-- Second Row -->
-            <!-- Buttons for numbers 4, 5, 6 and the "-" operator -->
             <button class="button" onclick="appendToDisplay('4')">4</button>
             <button class="button" onclick="appendToDisplay('5')">5</button>
             <button class="button" onclick="appendToDisplay('6')">6</button>
             <button class="button" onclick="appendToDisplay('-')">-</button>
             
             <!-- Third Row -->
-            <!-- Buttons for numbers 1, 2, 3 and the "/" operator -->
             <button class="button" onclick="appendToDisplay('1')">1</button>
             <button class="button" onclick="appendToDisplay('2')">2</button>
             <button class="button" onclick="appendToDisplay('3')">3</button>
             <button class="button" onclick="appendToDisplay('/')">/</button>
             
             <!-- Fourth Row -->
-            <!-- Buttons for ".", 0, "=" and the "*" operator -->
             <button class="button" onclick="appendToDisplay('.')">.</button>
             <button class="button" onclick="appendToDisplay('0')">0</button>
             <button class="button equal" onclick="calculateResult()">=</button>
             <button class="button" onclick="appendToDisplay('*')">*</button>
             
             <!-- Clear Button -->
-            <!-- "Clear" button spans the entire row, clearing the display -->
             <button class="button clear" onclick="clearDisplay()">C</button>
         </div>
     </div>
 
-    <!-- JavaScript for Calculator Functionality -->
-    <script>
-        /**
-         * Appends the value of the clicked button to the display.
-         * @param {string} value - The value to append (e.g., a number or operator).
-         */
-        function appendToDisplay(value) {
-            const display = document.getElementById('display');
-            display.value += value; // Concatenate the button value to the current display value
-        }
-
-        /**
-         * Clears the calculator display.
-         */
-        function clearDisplay() {
-            document.getElementById('display').value = ''; // Set the display value to an empty string
-        }
-
-        /**
-         * Evaluates the expression in the display and shows the result.
-         * If the expression is invalid, displays "Error".
-         */
-        function calculateResult() {
-            const display = document.getElementById('display');
-            try {
-                // Use Function constructor to safely evaluate the expression
-                display.value = Function('"use strict"; return (' + display.value + ')')();
-            } catch (error) {
-                display.value = 'Error'; // Show "Error" if the evaluation fails
-            }
-        }
-    </script>
+    <!-- Link to External JavaScript File -->
+    <script src="script.js"></script>
 </body>
 </html>
