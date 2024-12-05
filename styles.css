@@ -11,22 +11,26 @@ body {
 
 /* Calculator container */
 .calculator {
-  width: 320px;
+  width: 320px; /* Adjust width to ensure proper centering */
   background: #c1c1c1; /* Light gray background */
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+  display: flex;
+  flex-direction: column; /* Align items in a column */
+  align-items: center; /* Center content horizontally */
 }
 
 /* Display screen */
 .calculator .display {
-  width: 100%;
+  width: 100%; /* Ensure full width within the calculator */
+  max-width: 280px; /* Limit the maximum width */
   height: 60px;
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Space between display and buttons */
   font-size: 1.8em;
-  text-align: right;
+  text-align: right; /* Align text to the right */
   padding: 10px;
-  border: 2px solid #ddd;
+  border: 2px solid #ddd; /* Border for visual clarity */
   border-radius: 5px;
   background-color: #fff;
   box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.2); /* Inner shadow */
