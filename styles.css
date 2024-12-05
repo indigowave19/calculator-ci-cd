@@ -1,65 +1,84 @@
+/* Body styles */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5; /* Light gray background */
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .calculator {
-    width: 260px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-  }
-  
-  .calculator .display {
-    width: 100%;
-    height: 60px;
-    margin-bottom: 20px;
-    font-size: 1.5em;
-    text-align: right; /* Align text to the right like a standard calculator */
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  .calculator .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px; /* Space between buttons */
-  }
-  
-  .calculator .button {
-    background-color: #001B94; /* Button color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    padding: 15px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  .calculator .button:active {
-    background-color: #000A5E; /* Darker shade on click */
-    transform: scale(0.95);
-  }
-  
-  .calculator .button:focus {
-    outline: none;
-  }
-  
-  .calculator .button.clear {
-    background-color: #FF5733; /* Optional: Different color for the clear button */
-  }
-  
-  .calculator .button.clear:active {
-    background-color: #CC4629; /* Darker shade for the clear button */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #333; /* Dark background to match the second design */
+}
+
+/* Calculator container */
+.calculator {
+  width: 300px;
+  background: #c1c1c1; /* Light gray background */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Display screen */
+.calculator .display {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  text-align: right; /* Align numbers to the right */
+  padding: 10px;
+  border: 2px solid #ccc; /* Slight border for a framed look */
+  border-radius: 5px;
+  background-color: #fff; /* White background for the display */
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2); /* Inner shadow for depth */
+}
+
+/* Buttons container */
+.calculator .buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+  gap: 10px; /* Space between buttons */
+}
+
+/* Button styles */
+.calculator .button {
+  height: 60px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow */
+  background-color: #e0e0e0; /* Default light gray color */
+  color: #333; /* Dark text color */
+  transition: all 0.2s;
+}
+
+/* Button hover effect */
+.calculator .button:hover {
+  background-color: #d5d5d5; /* Slightly darker gray on hover */
+}
+
+/* Operator buttons */
+.calculator .button:not(.clear):not(.equal) {
+  background-color: #444; /* Dark buttons for operators */
+  color: white; /* White text for contrast */
+}
+
+/* Clear button */
+.calculator .button.clear {
+  background-color: #e63946; /* Red for the clear button */
+  color: white;
+}
+
+/* Equals button */
+.calculator .button.equal {
+  background-color: #0077b6; /* Blue for the equal button */
+  color: white;
+  grid-column: span 2; /* Make the equals button span two columns */
+}
+
+/* Button press effect */
+.calculator .button:active {
+  transform: scale(0.95); /* Slightly shrink button on press */
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}
