@@ -1,0 +1,41 @@
+name: CI/CD Pipeline for Calculator App
+
+# Trigger the workflow on code pushes to the main branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    # Define the environment for running the pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Validate HTML
+      - name: Validate HTML
+        uses: chuhlomin/htmlhint-action@v1.2.3
+
+      # Step 3: Lint CSS
+      - name: Lint CSS
+        uses: stylelint/stylelint-action@v3
+
+      # Step 4: Lint JavaScript
+      - name: Lint JavaScript
+        run: |
+          npm install eslint
+          npx eslint script.js
+
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
