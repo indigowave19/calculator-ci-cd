@@ -21,11 +21,13 @@ jobs:
 
       # Step 2: Validate HTML
       - name: Validate HTML
-        uses: chuhlomin/htmlhint-action@v1.2.3
+        run: |
+          npx htmlhint "**/*.html"
 
       # Step 3: Lint CSS
       - name: Lint CSS
-        uses: stylelint/stylelint-action@v3
+        run: |
+          npx stylelint "**/*.css"
 
       # Step 4: Lint JavaScript
       - name: Lint JavaScript
