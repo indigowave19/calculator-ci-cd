@@ -24,7 +24,7 @@ body {
 /* Display screen */
 .calculator .display {
   width: 100%;
-  height: 70px;
+  height: 50px;
   margin-bottom: 15px;
   font-size: 1.8em;
   text-align: right;
@@ -52,7 +52,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* Slight shadow */
-  background-color: #4d4d4d; /* Default dark gray color */
+  background-color: #001B94; /* Default dark gray color */
   color: #fff; /* White text */
   transition: all 0.2s;
 }
@@ -64,13 +64,13 @@ body {
 
 /* Equals button */
 .calculator .button.equal {
-  background-color: #0077b6; /* Blue for the equal button */
+  background-color: #f29324; /* Blue for the equal button */
   color: white;
 }
 
 /* Clear button */
 .calculator .button.clear {
-  background-color: #e63946; /* Red for the clear button */
+  background-color: #FF0000; /* Red for the clear button */
   color: white;
   grid-column: span 4; /* Spans all 4 columns */
   height: 75px; /* Slightly larger height for emphasis */
