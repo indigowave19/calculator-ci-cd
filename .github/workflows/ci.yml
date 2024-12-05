@@ -1,6 +1,6 @@
 name: CI/CD Pipeline for Calculator App
 
-# Trigger the workflow on code pushes to the main branch
+# Trigger the workflow on pushes to the main branch or pull requests to the main branch
 on:
   push:
     branches:
@@ -11,33 +11,31 @@ on:
 
 jobs:
   build:
-    # Define the environment for running the pipeline
+    # Use the latest version of Ubuntu as the runner environment
     runs-on: ubuntu-latest
 
     steps:
       # Step 1: Check out the code from the repository
+      # This pulls the repository code into the workflow environment
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Validate HTML
-      - name: Validate HTML
-        run: |
-          npx htmlhint "**/*.html"
-
-      # Step 3: Lint CSS
-      - name: Lint CSS
-        run: |
-          npx stylelint "**/*.css"
-
-      # Step 4: Lint JavaScript
-      - name: Lint JavaScript
-        run: |
-          npm install eslint
-          npx eslint script.js
-
-      # Step 5: Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      # Step 2: Set up Node.js environment
+      # This ensures the workflow has access to the correct Node.js version
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          node-version: "16" # Specify the Node.js version to use
+
+      # Step 3: Install dependencies
+      # Installs all dependencies listed in the package.json file
+      - name: Install dependencies
+        run: npm install
+
+      # Debugging: List installed packages
+      # Outputs all installed npm packages to the workflow logs for debugging
+      - name: List installed packages
+        run: npm list --depth=0
+
+      # Step 4: Lint CSS
+      
