@@ -1,0 +1,18 @@
+{
+  "name": "calculator-ci-cd",
+  "version": "1.0.0",
+  "description": "A project highlighting setting up a GitHub repository, create a basic web application, and build a CI/CD pipeline using GitHub Actions.",
+  "main": "script.js",
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0",
+    "typescript-eslint": "^8.17.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
